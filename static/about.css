@@ -1,0 +1,108 @@
+/* ===== ABOUT OVERLAY ===== */
+.about-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: fadeUp 0.3s ease-in-out forwards;
+}
+
+.about-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+.about-panel {
+  background: #1a1a1a;
+  border: 1px solid #c9a84c;
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 450px;
+  width: 90%;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  transform: translateY(-20px) scale(0.95);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.about-overlay.active .about-panel {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.about-panel h2 {
+  color: #c9a84c;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.about-panel p {
+  color: #ccc;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.about-designer {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #c9a84c44;
+  color: #aaa;
+  font-size: 13px;
+}
+
+.about-designer span {
+  color: #c9a84c;
+  font-weight: bold;
+}
+
+.about-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #c9a84c;
+  font-size: 22px;
+  cursor: pointer;
+}
+@keyframes fadeUp{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* close button design*/
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: 1px solid #c9a84c44;
+  color: #c9a84c;
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #c9a84c;
+  color: #000;
+  transform: rotate(90deg);
+}

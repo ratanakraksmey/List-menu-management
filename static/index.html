@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List-Menu maow</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+    
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-eyebrow">Fine Dining</span>
+            <span class="logo-title">Maow Menu</span>
+        </div>
+        <div class="header-button">
+        <button class="about-btn" onclick="openAbout()">About this website</button>
+        <button class="add-btn" onclick="openModal()">Add Item</button>
+        </div>
+    </header>
+
+    <div class="filter-bar">
+        <span class="filter-label">Filter</span>
+        <button class="filter-btn active" data-cat="ALL" onclick="setFilter('ALL', this)">ALL</button>
+        <button class="filter-btn" data-cat="Starters" onclick="setFilter('Starters',this)">Starters</button>
+        <button class="filter-btn" data-cat="Mains" onclick="setFilter('Mains', this)">Mains</button>
+        <button class="filter-btn" data-cat="Desserts" onclick="setFilter('Desserts', this)">Desserts</button>
+        <button class="filter-btn" data-cat="Drinks" onclick="setFilter('Drinks', this)">Drinks</button>
+    </div>
+
+    <main id="main-content"></main>
+
+    <!-- modal -->
+     <div class="overlay" id="overlay" onclick="handleOverlayClick(event)">
+        <div class="modal">
+            <div class="modal-title" id="modal-title">Add Menu Items</div>
+            <div class="form-row">
+                <div class="form-group">
+                <label>Dishname</label>
+                <input type="text" id="f-name" placeholder="e.g By srob">
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                <select id="f-cat">
+                    <option>Starters</option>
+                    <option>Mains</option>
+                    <option>Desserts</option>
+                    <option>Drinks</option>
+                </select>
+                </div>
+            </div>
+        
+        <div class="form-group">
+            <label>Price (USD)</label>
+            <input type="number" id="f-price" min="0" step="0.5" placeholder="0.00$">
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea id="f-desc" placeholder="Short, enticing description...."></textarea>
+        </div>
+        <div class="modal-actions">
+            <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+            <button class="btn-save" onclick="saveItem()">Save Items</button>
+        </div>
+     </div>
+</div>
+
+<!-- About Panel Overlay -->
+<div class="about-overlay" id="about-overlay">
+  <div class="about-panel">
+    <button class="close-btn" onclick="closeAbout()">✕</button>
+    <h2>About This Website</h2>
+    <p>This is a menu management system for adding and managing food items by category.</p>
+    <div class="designer">
+      Designed & Developed by <span>Smey_legend</span><br>
+      <small>© 2026 All Rights Reserved</small>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="script.js"></script>
+<script src="about.js"></script>
+<div class="toast" id="toast"></div>
+</body>
+</html>
