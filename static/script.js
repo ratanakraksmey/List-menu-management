@@ -1,4 +1,4 @@
-const API = 'http://localhost:8000/api/menu';
+const API = '/api/menu';
 let items = [];
 let activeFilter = 'ALL';
 let editingId = null;
